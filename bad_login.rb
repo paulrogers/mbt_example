@@ -9,6 +9,6 @@ class BadLogin < Model::WebNode
   end	
 
   def on_page?
-    title_section.displayed? and title_section.text == "Username was incorrect."
+    error_section.displayed? and error_section.text == "Username was incorrect."
   end	
 end

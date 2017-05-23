@@ -15,7 +15,7 @@ class LoginPage < Model::WebNode
   end
 
   def login( name = nil )
-  	name = "test "  # the space on the login field messes us up a bit
+  	name = "test " unless name  # the space on the login field messes us up a bit
     username_text_field.send_keys( name )
     login_button.click
   end

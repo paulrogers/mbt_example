@@ -9,6 +9,10 @@ class MainPage < Model::WebNode
     browser.find_element(:id => "logout").click
   end	
 
+  def view_users
+    browser.find_element(:id => "users").click
+  end	
+
   def on_page?
     message_span = browser.find_element(:id => "message")
     ( message_span.displayed? and message_span.text.match(/You are now signed in/ )  )

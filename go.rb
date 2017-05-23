@@ -8,6 +8,8 @@ end
 
 $browser = Selenium::WebDriver.for(:firefox )
 
+$new_user = ""
+
 require_relative "login_page_controls"
 require_relative "create_users_page"
 require_relative "bad_login" 

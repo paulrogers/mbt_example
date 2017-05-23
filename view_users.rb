@@ -7,7 +7,7 @@ class ViewUsers < Model::WebNode
   transition :create_user , :goes_to => :CreateUserPage
 
   def logout
-    browser.find_element(:id => "logout").clickz
+    browser.find_element(:id => "logout").click
   end	
 
   def create_user
@@ -32,5 +32,14 @@ class ViewUsers < Model::WebNode
     end
     return false	
   end
+
+  def created?
+    if on_page?
+      if browser.find_element(:class => "alert").text.strip == "User '#{$new_user}' created."
+        return true
+      end  
+    end
+    return false  
+  end  
 
 end

@@ -12,4 +12,9 @@ module LoginPageControls
     browser.find_element(:id => "title")
   end	
 
+  def error_section
+    browser.find_element(:id => "page_body")
+
+  end	
+
 end
