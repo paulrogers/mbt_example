@@ -14,9 +14,9 @@ class CreateUserPage < Model::WebNode
 
   def create_user( name = nil)
     if name.nil?
-      name = Time.now.to_i.to_s
+      name = "New_" + Time.now.to_i.to_s
     end
-    $new_user = name
+    $new_users << name
     browser.find_element(:id => "username").send_keys name
     browser.find_element(:id => "create").click
   end  

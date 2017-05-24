@@ -35,9 +35,14 @@ class ViewUsers < Model::WebNode
 
   def created?
     if on_page?
-      if browser.find_element(:class => "alert").text.strip == "User '#{$new_user}' created."
+      text = browser.find_element(:class => "alert").text.strip
+      if text == "User '#{$new_users.last}' created."
         return true
+      else
+          puts "created? - didnt find correct text - got #{text}"
       end  
+    else
+      puts "created? - on_page returned false"  
     end
     return false  
   end  
